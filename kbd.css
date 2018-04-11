@@ -1,0 +1,25 @@
+/*$.kbd-0.1;<https://github.com/mntn-dev/kbd/>*/
+
+#_kbd{position:fixed;bottom:0;width:100%;background:#000;z-index:9999;bottom:-100%;}
+#_kbd #_kbd_wrap{text-align:center;width:100%;display:block;min-width:400px;}
+#_kbd,#_kbd *{cursor:default;padding:0;margin:0;outline:0;border:0;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+#_kbd button{width:10%;padding:20px;color:#fff;background:linear-gradient(45deg,#000,#010101);font-size:1.9vw;}
+#_kbd button:hover{background:linear-gradient(45deg,#000,#222);}
+
+#_kbd button.l{width:15%;}
+#_kbd button.xl{width:40%;}
+
+._ext{position:relative;display:inline-block;height:100%;width:10%;overflow:visible;}
+._ext-1:after{content:'\2022';position:absolute;left:85%;top:5%;color:#444;opacity:0.8;}
+._ext-caps{color:aquamarine!important;}
+
+._ext-box{position:absolute;width:100%;height:auto;display:none;box-shadow:10px 10px 50px 0 rgba(0,0,0,0.33);z-index:9999;}
+._ext-box button,._ext button{width:100%!important;}
+
+._kbd_white{background:#fff!important;}
+._kbd_white button{color:#111!important;background:linear-gradient(45deg,#fff,#fcfcfc)!important;}
+._kbd_white button:hover,._kbd_white button:active,._kbd_white button.xl{background:#f8f8f8!important;}
+._kbd_white ._ext-1:after{color:#ccc!important;}
+._kbd_white ._ext-caps{color:aquamarine!important;}
+
+#_kbd_coffee{z-index:99999;pointer-events:none;opacity:0.7;position:absolute;top:25%;left:40%;height:200%;width:100%;background:linear-gradient(22deg,#6B4226 5%,#A68064);border-radius:50%;}

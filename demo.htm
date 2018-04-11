@@ -1,0 +1,118 @@
+<!doctype html><html>
+
+<head>
+
+<title>$.kbd</title>
+<meta charset="utf-8"/>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+<link href="https://rawgit.com/mntn-dev/kbd/master/kbd.css" rel="stylesheet"/> <!-- $.kbd.css -->
+
+
+
+
+<style type="text/css">
+<!--
+
+*{padding:0;margin:0;outline:0;border:0;font-family:roboto;}
+body{background:#fff;overflow:hidden;}
+
+
+#txt{position:absolute;padding:10%;width:80%;height:80%;left:0;top:0;font-size:3vw;line-height:3vw;}
+#txt pre{white-space:pre-wrap;word-wrap:break-word;display:inline;}
+#txt span{color:magenta;}
+
+
+#ops{z-index:999;position:absolute;top:3%;left:3%;width:100%;height:auto;font-size:1vw;line-height:1vw;}
+#ops button{background:white;border:1px solid #999;border-radius:5px;padding:5px;margin-bottom:5px;}
+#ops button:hover{background:#fafafa;}#ops button:active{background:#111;color:white;}
+
+-->
+</style>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/mntn-dev/kbd/master/kbd.js"></script>  <!-- $.kbd -->
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+
+var t=0;
+
+
+function input_cb(c){
+
+if(c==$.BS/*backspace*/)return($('#txt pre').text($('#txt pre').text().slice(0,-1)));
+$('#txt pre').append((c==$.OK)?'\n':c);
+
+t=1;
+
+}
+
+
+
+
+$(function(){
+
+$.kbd({
+qwertz:false,
+input:input_cb,
+white:true,
+hidden:true,
+coffee:false
+});
+
+
+setTimeout(function(){$.kbd.show();},2e3);
+setInterval(function(){if(t<0)$('#txt span').toggle();else{$('#txt span').show();--t}},5e2);//caret
+
+
+});
+
+
+
+//]]>
+</script>
+
+
+</head>
+
+
+<body>
+
+<div id="txt"><pre></pre><span>|</span></div>
+
+
+
+<div id="ops">
+
+<button onclick="$.kbd.show();">$.kbd.show()</button>
+<button onclick="$.kbd.hide();">$.kbd.hide()</button>
+<button onclick="$.kbd.white();" title="white kbd">$.kbd.white([<span style="color:tomato;">true</span>])</button>
+<button onclick="$.kbd.white(false);" title="=black">$.kbd.white(<span style="color:tomato;">false</span>)</button>
+<button onclick="$.kbd.caps(true);" title="longpress: permanent caps">$.kbd.caps(<span style="color:tomato;">true</span>)</button>
+<button onclick="$.kbd.caps(false);" title="unset permanent caps">$.kbd.caps(<span style="color:tomato;">false</span>)</button>
+<button onclick="$.kbd.caps();" title="1-time-caps toggle / unset permanent caps">$.kbd.caps()</button>
+<br/>
+<button onclick="$.kbd.alt(true);" title="ABC&rarr;123">$.kbd.alt(<span style="color:tomato;">true</span>)</button>
+<button onclick="$.kbd.alt(false);" title="123&rarr;ABC">$.kbd.alt(<span style="color:tomato;">false</span>)</button>
+<button onclick="$.kbd.alt();" title="toggle 123/ABC">$.kbd.alt()</button>
+(<strong>Vars: $.OK</strong> (Return/Enter), <strong>$.BS</strong> (Backspace))
+
+</div>
+
+
+
+
+
+
+</body>
+
+
+</html>
+

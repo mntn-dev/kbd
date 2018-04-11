@@ -10,6 +10,8 @@
 &lt;script src="kbd.(min.)js"&gt;&lt;/script&gt;
 </pre>
 
+<img src="https://mntn-dev.github.io/kbd/kbd-w.png" alt="$.kbd"/>
+
 <pre>
 $.kbd({
  white:false, // keyboard theme (def.: false(=black))

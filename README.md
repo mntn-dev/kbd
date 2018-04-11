@@ -7,7 +7,7 @@
 &lt;link href="kbd.css" rel="stylesheet"/&gt;
 ...
 &lt;script src="jquery.js"&gt;&lt;/script&gt;
-&lt;script src="kbd.js"&gt;&lt;/script&gt;
+&lt;script src="kbd.(min.)js"&gt;&lt;/script&gt;
 </pre>
 
 <pre>
@@ -46,7 +46,7 @@ $.BS // Backspace
 </pre>
 
 # Docs/demos
-<a href="https://mntn-dev.github.io/kbd/" target="_blank">https://mntn-dev.github.io/kbd/</a>
+<a href="https://mntn-dev.github.io/kbd/" target="_blank">https://mntn-dev.github.io/kbd/</a><br/>
 <a href="https://rawgit.com/mntn-dev/kbd/master/demo.htm" target="_blank">@demo.htm</a>
 
 

@@ -3,7 +3,7 @@
 
 # Usage
 
-<code>
+<pre>
 $.kbd({
  white:false, //keyboard theme (def.: false(=black))
  qwertz:false, //layout (def.: false(=qwerty))
@@ -11,7 +11,7 @@ $.kbd({
  input:function(char){[...]}, //input callback
  coffee:false //coffee splash? (white theme)
 });
-</code>
+</pre>
 
 # Docs/demos
 <a href="https://mntn-dev.github.io/kbd/" target="_blank">https://mntn-dev.github.io/kbd/</a>

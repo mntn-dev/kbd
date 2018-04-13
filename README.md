@@ -1,24 +1,29 @@
 <img src="https://mntn-dev.github.io/kbd/kbd.gif" alt="$.kbd"/>
+<img src="https://mntn-dev.github.io/kbd/kbd-w.png" alt="$.kbd"/>
 
 
 # Usage
 
 <pre>
-&lt;link href="kbd.css" rel="stylesheet"/&gt;
+&lt;link href="<a href="https://raw.githubusercontent.com/mntn-dev/kbd/master/kbd.css" target="_blank">kbd.css</a>" rel="stylesheet"/&gt;
 ...
-&lt;script src="jquery.js"&gt;&lt;/script&gt;
-&lt;script src="kbd.(min.)js"&gt;&lt;/script&gt;
+&lt;script src="<a href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" target="_blank">jquery.js"&gt;&lt;/script&gt;
+&lt;script src="<a href="https://raw.githubusercontent.com/mntn-dev/kbd/master/kbd.js" target="_blank">kbd.js</a>"&gt;&lt;/script&gt;
 </pre>
 
-<img src="https://mntn-dev.github.io/kbd/kbd-w.png" alt="$.kbd"/>
 
 <pre>
-$.kbd({
- white:false, // keyboard theme (def.: false(=black))
- qwertz:false, // layout (def.: false(=qwerty))
- hidden:false, // just init, don't show
- input:function(char){[...]}, // input callback
- coffee:false // coffee splash? (white theme)
+
+$(function(){
+
+ $.kbd({
+  white:false, // keyboard theme (def.: false(=black))
+  qwertz:false, // layout (def.: false(=qwerty))
+  hidden:false, // just init, don't show
+  input:function(char){[...]}, // input callback
+  coffee:false // coffee splash? (white theme)
+ });
+
 });
 
 
@@ -31,7 +36,7 @@ $.kbd.hide()
 $.kbd.white([true]) // white theme
 $.kbd.white(false) // black
 
-$.kbd.caps(true) // permanent caps (triggers <em>longpress</em>)
+$.kbd.caps(true) // permanent caps ('longpress')
 $.kbd.caps(false) // unset caps
 $.kbd.caps() // toggles caps
 

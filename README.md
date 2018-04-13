@@ -5,14 +5,12 @@
 # Usage
 
 <pre>
----
-
 &lt;link href="<a style="color:#222!important;" href="https://raw.githubusercontent.com/mntn-dev/kbd/master/kbd.css" target="_blank">kbd.css</a>" rel="stylesheet"/&gt;
 ...
- &lt;script src="<a style="color:#222!important;"href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" target="_blank">jquery.js</a>"&gt;&lt;/script&gt;
- &lt;script src="<a style="color:#222!important;"href="https://raw.githubusercontent.com/mntn-dev/kbd/master/kbd.js" target="_blank">kbd.js</a>"&gt;&lt;/script&gt;
+&lt;script src="<a style="color:#222!important;"href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" target="_blank">jquery.js</a>"&gt;&lt;/script&gt;
+&lt;script src="<a style="color:#222!important;"href="https://raw.githubusercontent.com/mntn-dev/kbd/master/kbd.js" target="_blank">kbd.js</a>"&gt;&lt;/script&gt;
 
----
+<hr/>
 
 $(function(){
 

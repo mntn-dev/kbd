@@ -47,7 +47,7 @@ var t=0;
 
 function input_cb(c){
 
-if(c==$.BS/*backspace*/)return($('#txt pre').text($('#txt pre').text().slice(0,-1)));
+if(c==$.BS/*backspace*/){t=1;return($('#txt pre').text($('#txt pre').text().slice(0,-1)));}
 $('#txt pre').append((c==$.OK)?'\n':c);
 
 t=1;

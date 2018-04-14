@@ -1,10 +1,11 @@
-/*$.kbd-0.1;<https://github.com/mntn-dev/kbd/>*/
+/*$.kbd-0.2;<https://github.com/mntn-dev/kbd/>*/
 
-#_kbd{position:fixed;bottom:0;width:100%;background:#000;z-index:9999;bottom:-100%;}
-#_kbd #_kbd_wrap{text-align:center;width:100%;display:block;min-width:400px;}
-#_kbd,#_kbd *{cursor:default;padding:0;margin:0;outline:0;border:0;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
-#_kbd button{width:10%;padding:20px;color:#fff;background:linear-gradient(45deg,#000,#010101);font-size:1.9vw;}
-#_kbd button:hover{background:linear-gradient(45deg,#000,#222);}
+#_kbd{position:fixed;bottom:0;width:100%;background:#000;z-index:9999;bottom:-100%;transform-origin:bottom;}
+#_kbd #_kbd_wrap{text-align:center;width:100%;display:block;min-width:500px;}
+#_kbd,#_kbd *{cursor:default;padding:0;margin:0;outline:0;border:0;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;touch-action:none;}
+#_kbd button{width:10%;padding:20px;color:#fff;background:#000;font-size:1.9vw;line-height:1.9vw;}
+#_kbd ._kbd-h{background:#111!important;}
+
 
 #_kbd button.l{width:15%;}
 #_kbd button.xl{width:40%;}
@@ -17,9 +18,13 @@
 ._ext-box button,._ext button{width:100%!important;}
 
 ._kbd_white{background:#fff!important;}
-._kbd_white button{color:#111!important;background:linear-gradient(45deg,#fff,#fcfcfc)!important;}
-._kbd_white button:hover,._kbd_white button:active,._kbd_white button.xl{background:#f8f8f8!important;}
+._kbd_white button{color:#111!important;background:#fff!important;}
+._kbd_white button.xl{background:#f8f8f8!important;}
 ._kbd_white ._ext-1:after{color:#ccc!important;}
 ._kbd_white ._ext-caps{color:aquamarine!important;}
+#_kbd ._kbd-h-w{background:#f8f8f8!important;}
 
 #_kbd_coffee{z-index:99999;pointer-events:none;opacity:0.7;position:absolute;top:25%;left:40%;height:200%;width:100%;background:linear-gradient(22deg,#6B4226 5%,#A68064);border-radius:50%;}
+
+
+@media(max-device-width:700px),(max-width:700px){#_kbd button{font-size:3.2vw!important;line-height:3.2vw!important;padding:25px;}}

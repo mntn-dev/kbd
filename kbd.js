@@ -1,4 +1,4 @@
-/*$.kbd-0.3;(c)2018 - Mntn(r) <https://mn.tn/> c/o Benjamin Lips <g--[AT]--mn.tn>;MIT-Licensed <https://mit-license.org/>;For documentation, see <https://github.com/mntn-dev/kbd/>*/
+/*$.kbd-0.4;(c)2018 - Mntn(r) <https://mn.tn/> c/o Benjamin Lips <g--[AT]--mn.tn>;MIT-Licensed <https://mit-license.org/>;For documentation, see <https://github.com/mntn-dev/kbd/>*/
 ;(function($){
 
 $.kbd=function(_){
@@ -52,6 +52,7 @@ $('._alt').click(function(){
 $(__='button[data-a],button[data-k],._ext-box button').bind('mouseup touchend',function(_$,r){
  _$.preventDefault();
  if(_kbd_t&&!r){clearTimeout(_kbd_t);clearInterval(_kbd_t);}
+ if(T())if($(this).prev('._ext-box').is(':visible'))return;
  if((typeof(_.input))[0]=='f')_.input($(this).data().k?String.fromCharCode($(this).data().k):$(this).text());
  if(Q()=='Q'&&!$('._caps').hasClass('_ext-caps'))$('._caps').trigger('mouseup');t_up($(this));
 }).bind('touchstart',function(){$(this).trigger('mouseenter',!!1);});
@@ -82,7 +83,7 @@ $.kbd.show =function(){$('#_kbd').stop().animate({bottom:0},250);},
 $.kbd.white=function(_){if((_===!!1||_===undefined)&&!$('#_kbd').hasClass('_kbd_white')){$('#_kbd').addClass('_kbd_white');if($('#_kbd_coffee')[0]!==undefined)$('#_kbd_coffee').css({display:'block'});}else if(_===!1&&$('#_kbd').hasClass('_kbd_white')){$('#_kbd').removeClass('_kbd_white');if($('#_kbd_coffee')[0]!==undefined)$('#_kbd_coffee').css({display:'none'});}},
 $.kbd.caps =function(_){q=$('#__q').text();if(_===!!1&&q=='q')$('._caps').addClass('_ext-caps').trigger('mouseup');else if(_===!1&&q=='Q')$('._caps').removeClass('_ext-caps').trigger('mouseup');else if(_===undefined)$('._caps').trigger('mouseup');},
 $.kbd.alt  =function(_){q=$('#__q').text();if(_===!!1&&q.toLowerCase()=='q')$('._alt').trigger('click');else if(_===!1&&q=='1')$('._alt').trigger('click');else if(_===undefined)$('._alt').trigger('click');},
-$.kbd.lock =function(_){if(_===!!1||_===undefined)$('#kbd-lock').show();else if(_===!1)$('#kbd-lock').hide();else if(_==='')$('#kbd-lock').toggle();},
+$.kbd.lock =function(_){if(_===!!1||_===undefined)$('#kbd-lock').show();else if(_===!1)$('#kbd-lock').hide();},
 $.BS=String.fromCharCode(8),
 $.OK=String.fromCharCode(13)
 

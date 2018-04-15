@@ -8,7 +8,7 @@ if($('#_kbd')[0]!==undefined)return($.kbd.show());
 $('body').append('<div id="_kbd"><span id="_kbd_wrap"></span>'+(_.coffee?'<div id="_kbd_coffee"'+(_.white!==!1?'':' style="display:none;"')+'></div>':'')+'<div id="kbd-lock"></div></div>');
 if(_.white===!!1)$('#_kbd').addClass('_kbd_white');
 
-var _kbd_t=!1,q='',tc=function(_){c=_.data().c;cc=_.text();_.text(c);_.data('c',cc);},
+var _kbd_t=!1,_kbd_t2=!1,q='',tc=function(_){c=_.data().c;cc=_.text();_.text(c);_.data('c',cc);},
 Q=function(_){q=$('#__q').text();return((_===0)?q.toLowerCase():q);},T=function(){return(window.ontouchstart!==undefined);},
 t_up=function(_){if(T())setTimeout(function(_){_.removeClass('_kbd-h'+($('#_kbd').hasClass('_kbd_white')?'-w':''));},1e2,_);}
 
@@ -52,7 +52,7 @@ $('._alt').click(function(){
 $(__='button[data-a],button[data-k],._ext-box button').bind('mouseup touchend',function(_$,r){
  _$.preventDefault();
  if(_kbd_t&&!r){clearTimeout(_kbd_t);clearInterval(_kbd_t);}
- if(T())if($(this).prev('._ext-box').is(':visible'))return(t_up($(this)));
+ if(T())if($(this).prev('._ext-box').is(':visible'))return;
  if((typeof(_.input))[0]=='f')_.input($(this).data().k?String.fromCharCode($(this).data().k):$(this).text());
  if(Q()=='Q'&&!$('._caps').hasClass('_ext-caps'))$('._caps').trigger('mouseup');t_up($(this));
 }).bind('touchstart',function(){$(this).trigger('mouseenter',!!1);});
@@ -67,11 +67,11 @@ function(){if(!T())$(this).removeClass('_kbd-h'+($('#_kbd').hasClass('_kbd_white
 $('button[data-k]').bind('mousedown touchstart',function(_){_.preventDefault();_kbd_t=setTimeout(function(_){_kbd_t=setInterval(function(){_.trigger('mouseup',!!1);},50,_);},2e2,$(this));});
 
 $('._ext')
-.bind('mousedown touchstart',function(_){_.preventDefault();if($(this).hasClass('_ext-1')||($(this).hasClass('_ext-0')&&Q(0)=='q')){_kbd_t=setTimeout(function(_){_.find('._ext-box').show();},750,$(this));if(T())setTimeout(function(_){_.find('._ext-box').hide();},3e3,$(this));  }})
+.bind('mousedown touchstart',function(_){_.preventDefault();if($(this).hasClass('_ext-1')||($(this).hasClass('_ext-0')&&Q(0)=='q')){_kbd_t=setTimeout(function(_){_.find('._ext-box').show();},750,$(this));if(T())_kbd_t2=setTimeout(function(_){_.find('._ext-box').hide();t_up(_.children('button'))},3e3,$(this));}})
 .bind('mouseup mouseleave',function(_){_.preventDefault();$(this).find('._ext-box:visible').hide();if(_kbd_t)clearTimeout(_kbd_t);});
 
 
-$('._ext-box button').bind('touchend',function(){$(this).parent().hide();});
+$('._ext-box button').bind('touchend',function(){if(_kbd_t2)clearTimeout(_kbd_t2);$(this).parent().hide();t_up($(this).parent().parent().children('button'));});
 
 if(_.hidden===!!1)return;$.kbd.show();
 

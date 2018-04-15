@@ -52,7 +52,7 @@ $('._alt').click(function(){
 $(__='button[data-a],button[data-k],._ext-box button').bind('mouseup touchend',function(_$,r){
  _$.preventDefault();
  if(_kbd_t&&!r){clearTimeout(_kbd_t);clearInterval(_kbd_t);}
- if(T())if($(this).prev('._ext-box').is(':visible'))return;
+ if(T())if($(this).prev('._ext-box').is(':visible'))return(t_up($(this)));
  if((typeof(_.input))[0]=='f')_.input($(this).data().k?String.fromCharCode($(this).data().k):$(this).text());
  if(Q()=='Q'&&!$('._caps').hasClass('_ext-caps'))$('._caps').trigger('mouseup');t_up($(this));
 }).bind('touchstart',function(){$(this).trigger('mouseenter',!!1);});

@@ -61,8 +61,8 @@ $.BS // Backspace
 ```
 
 # Docs/demos
-<a href="https://mntn-dev.github.io/kbd/" target="_blank">https://mntn-dev.github.io/kbd/</a><br/>
-<a href="https://rawgit.com/mntn-dev/kbd/master/demo.htm" target="_blank">@demo.htm</a>
+* <a href="https://mntn-dev.github.io/kbd/" target="_blank">https://mntn-dev.github.io/kbd/</a><br/>
+* <a href="https://rawgit.com/mntn-dev/kbd/master/demo.htm" target="_blank">@demo.htm</a>
 
 
 # License

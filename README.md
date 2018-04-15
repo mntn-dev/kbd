@@ -48,6 +48,10 @@ $.kbd.alt(true) // ABC->123
 $.kbd.alt(false) // 123->ABC
 $.kbd.alt() // toggles ABC/123
 
+$.kbd.lock([true]) // locks keyboard; no input
+$.kbd.lock(false) // unlock
+
+
 /*Vars:
 -----*/
 

@@ -2,7 +2,7 @@
 
 <head>
 
-<title>$.kbd</title>
+<title>&#9000; $.kbd-demo</title>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
 
@@ -48,7 +48,7 @@ var t=0;
 
 function input_cb(c){
 
-if(c==$.BS/*backspace*/){t=1;return($('#txt pre').text($('#txt pre').text().slice(0,-1)));}
+if(c==$.BS/*backspace*/){t=1;$('#txt pre').text($('#txt pre').text().slice(0,-1));return;}
 $('#txt pre').append((c==$.OK)?'\n':c);
 
 t=1;
@@ -103,6 +103,10 @@ setInterval(function(){if(t<0)$('#txt span').toggle();else{$('#txt span').show()
 <button onclick="$.kbd.alt(true);" title="ABC&rarr;123">$.kbd.alt(<span style="color:tomato;">true</span>)</button>
 <button onclick="$.kbd.alt(false);" title="123&rarr;ABC">$.kbd.alt(<span style="color:tomato;">false</span>)</button>
 <button onclick="$.kbd.alt();" title="toggle 123/ABC">$.kbd.alt()</button>
+<br/>
+<button onclick="$.kbd.lock();" title="locks kbd">$.kbd.lock([true])</button>
+<button onclick="$.kbd.lock(false);" title="unlock">$.kbd.lock(false)</button>
+
 (<strong>Vars: $.OK</strong> (Return/Enter), <strong>$.BS</strong> (Backspace))
 
 </div>

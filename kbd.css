@@ -1,11 +1,11 @@
-/*$.kbd-0.2;<https://github.com/mntn-dev/kbd/>*/
+/*$.kbd-0.3;<https://github.com/mntn-dev/kbd/>*/
 
 #_kbd{position:fixed;bottom:0;width:100%;background:#000;z-index:9999;bottom:-100%;transform-origin:bottom;}
 #_kbd #_kbd_wrap{text-align:center;width:100%;display:block;min-width:500px;}
 #_kbd,#_kbd *{cursor:default;padding:0;margin:0;outline:0;border:0;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;touch-action:none;}
 #_kbd button{width:10%;padding:20px;color:#fff;background:#000;font-size:1.9vw;line-height:1.9vw;}
 #_kbd ._kbd-h{background:#111!important;}
-
+#_kbd #kbd-lock{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;background:#fff;z-index:127001;display:none;}
 
 #_kbd button.l{width:15%;}
 #_kbd button.xl{width:40%;}

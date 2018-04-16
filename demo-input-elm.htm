@@ -26,6 +26,8 @@ input,textarea{padding:20px;background:lightyellow;}
 textarea{height:auto;}
 
 
+#bw{cursor:pointer;position:fixed;top:5%;right:5%;height:20px;width:20px;background:magenta;border-radius:100%;}
+
 -->
 </style>
 
@@ -40,14 +42,16 @@ textarea{height:auto;}
 //<![CDATA[
 
 
-var inp=!1;//current input elm
+var inp=!1, // current input elm
+     wht=true; // keyboard theme
+
 
 
 function input_cb(c){
 
  inp.focus();
  if(c==$.BS/*backspace*/){inp.val(inp.val().slice(0,-1));return;}
- if(inp.attr('id')=='inp2'&&(!c.match(/^[0-9]$/)&&c!=$.OK))return; //accept only numeric for #inp2
+ if(inp.attr('id')=='inp2'&&(!c.match(/^[0-9]$/)&&c!=$.OK))return; // accept only numeric for #inp2
  if((inp.attr('id')=='inp1'||inp.attr('id')=='inp2')&&c==$.OK){$('#ok').text('Howdy!11');$.kbd.hide();return;}
  inp.val(inp.val()+((c==$.OK/*return/enter*/)?'\n':c));
 
@@ -58,19 +62,23 @@ function input_cb(c){
 $(function(){
 
 $.kbd({
-qwertz:false,
-input:input_cb,
-hidden:true,
-white:true,
+ qwertz:false,
+ input:input_cb,
+ hidden:true,
+ white:true,
 });
 
 
 
 $('input,textarea').focus(function(){
-inp=$(this);
-$.kbd.show();$('#ok').text('');
-if(inp.attr('id')=='inp2')$.kbd.alt(true); //show alt block (nums)
+ inp=$(this);$.kbd.show();$('#ok').text('');
+ if(inp.attr('id')=='inp2')$.kbd.alt(true); // show alt block (nums)
 });
+
+
+
+
+$('#bw').click(function(){$.kbd.white(bw=!bw);}); // toggle theme (wht/blk)
 
 
 
@@ -101,6 +109,7 @@ if(inp.attr('id')=='inp2')$.kbd.alt(true); //show alt block (nums)
 
 </div>
 
+<div id="bw"></div>
 
 
 </body>

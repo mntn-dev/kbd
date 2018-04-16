@@ -47,7 +47,8 @@ function input_cb(c){
 
  inp.focus();
  if(c==$.BS/*backspace*/){inp.val(inp.val().slice(0,-1));return;}
- if(inp.attr('id')=='inp2'&&(!c.match(/^[0-9]+$/)||c==$.OK))return; //accept only numeric for #inp2
+ if(inp.attr('id')=='inp2'&&(!c.match(/^[0-9]$/)&&c!=$.OK))return; //accept only numeric for #inp2
+ if((inp.attr('id')=='inp1'||inp.attr('id')=='inp2')&&c==$.OK){$('#ok').text('Howdy!11');$.kbd.hide();return;}
  inp.val(inp.val()+((c==$.OK/*return/enter*/)?'\n':c));
 
 }
@@ -67,7 +68,7 @@ white:true,
 
 $('input,textarea').focus(function(){
 inp=$(this);
-$.kbd.show();
+$.kbd.show();$('#ok').text('');
 if(inp.attr('id')=='inp2')$.kbd.alt(true); //show alt block (nums)
 });
 
@@ -95,7 +96,7 @@ if(inp.attr('id')=='inp2')$.kbd.alt(true); //show alt block (nums)
 <textarea id="inp3">textarea</textarea>
 <br/><br/>
 
-<div style="width:50%;height:10%;background:tomato;"></div>
+<div id="ok" style="width:20%;height:5%;background:tomato;padding:5%;color:#fff;"></div>
 
 
 </div>

@@ -1,0 +1,108 @@
+<!doctype html><html>
+
+<head>
+
+<title>&#9000; $.kbd-demo-input-elm</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+<link href="https://rawgit.com/mntn-dev/kbd/master/kbd.css" rel="stylesheet"/> <!-- $.kbd.css -->
+
+
+
+
+<style type="text/css">
+<!--
+
+*{padding:0;margin:0;outline:0;border:0;font-family:roboto;}
+body{background:#fff;overflow:hidden;}
+html{height:100%;width:100%;}
+
+
+#txt{position:absolute;padding:10%;width:80%;height:80%;left:0;top:0;font-size:3vw;line-height:3vw;background:whitesmoke;}
+input,textarea{padding:20px;background:lightyellow;}
+textarea{height:auto;}
+
+
+-->
+</style>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/mntn-dev/kbd/master/kbd.js"></script>  <!-- $.kbd -->
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+
+var inp=!1;//current input elm
+
+
+function input_cb(c){
+
+ inp.focus();
+ if(c==$.BS/*backspace*/){inp.val(inp.val().slice(0,-1));return;}
+ if(inp.attr('id')=='inp2'&&(!c.match(/^[0-9]+$/)||c==$.OK))return; //accept only numeric for #inp2
+ inp.val(inp.val()+((c==$.OK/*return/enter*/)?'\n':c));
+
+}
+
+
+
+$(function(){
+
+$.kbd({
+qwertz:false,
+input:input_cb,
+hidden:true,
+white:true,
+});
+
+
+
+$('input,textarea').focus(function(){
+inp=$(this);
+$.kbd.show();
+if(inp.attr('id')=='inp2')$.kbd.alt(true); //show alt block (nums)
+});
+
+
+
+});
+
+
+
+//]]>
+</script>
+
+
+</head>
+
+
+<body>
+
+<div id="txt">
+
+<input id="inp1" type="text" value="Hello"/>
+<input id="inp2" type="text" value="123"/>
+<br/><br/>
+
+<textarea id="inp3">textarea</textarea>
+<br/><br/>
+
+<div style="width:50%;height:10%;background:tomato;"></div>
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

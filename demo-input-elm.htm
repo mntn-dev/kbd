@@ -52,7 +52,7 @@ function input_cb(c){
 
  inp.focus();
  if(c==$.BS/*backspace*/){inp.val(inp.val().slice(0,-1));return;}
- if(inp.attr('id')=='inp2'&&(!c.match(/^[0-9]$/)&&c!=$.OK)){inp.addClass('g');setTimeout(function(){inp.removeClass('g');},250);return;} // accept only numeric input for #inp2
+ if(inp.attr('id')=='inp2'&&(!c.match(/^[0-9]$/)&&c!=$.OK)){inp.addClass('g');setTimeout(function(){inp.removeClass('g');},1e2);return;} // accept only numeric input for #inp2
  if((inp.attr('id')=='inp1'||inp.attr('id')=='inp2')&&c==$.OK){$('#ok').text('Howdy!11');$.kbd.hide();return;}
  inp.val(inp.val()+((c==$.OK/*return/enter*/)?'\n':c));
 
@@ -80,7 +80,7 @@ $('input,textarea').focus(function(){
 
 
 $('#bw').click(function(){$.kbd.white(bw=!bw);}); // toggle theme (wht/blk)
-
+$('#ok').click(function(){$.kbd.hide();});
 
 
 });

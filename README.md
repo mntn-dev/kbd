@@ -1,10 +1,6 @@
 <img src="https://mntn-dev.github.io/kbd/kbd.gif" alt="$.kbd"/>
-<img src="https://mntn-dev.github.io/kbd/kbd-w.png" alt="$.kbd"/>
-
 
 # Usage
-
-
 
 ```js
 
@@ -59,6 +55,9 @@ $.OK // Return/Enter
 $.BS // Backspace
 
 ```
+
+<img src="https://mntn-dev.github.io/kbd/kbd-w.png" alt="$.kbd"/>
+
 
 # Docs/demos
 * <a href="https://mntn-dev.github.io/kbd/" target="_blank">https://mntn-dev.github.io/kbd/</a><br/>

@@ -1,6 +1,3 @@
-$.kbd
---
-
 <img src="https://mntn-dev.github.io/kbd/kbd.gif" alt="$.kbd"/>
 
 # Usage

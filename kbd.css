@@ -7,7 +7,7 @@
 #_kbd ._kbd-h{background:#111!important;}
 #_kbd #kbd-lock{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;background:#fff;z-index:127001;display:none;}
 
-#_kbd_btn{position:absolute;top:-25%;left:0;width:100%!important;color:aquamarine!important;z-index:9998;}
+#_kbd_btn{position:absolute;top:-25%;left:0;width:100%!important;z-index:9998;}
 
 #_kbd button.l{width:15%;}
 #_kbd button.xl{width:40%;}

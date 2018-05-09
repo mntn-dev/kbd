@@ -62,16 +62,17 @@ t=1;
 $(function(){
 
 $.kbd({
-qwertz:false,
-input:input_cb,
-white:true,
-hidden:true,
-coffee:false
+ qwertz:false,
+ toggle_btn:true,
+ input:input_cb,
+ white:true,
+ hidden:true,
+ coffee:false
 });
 
 
 setTimeout(function(){$.kbd.show();},2e3);
-setInterval(function(){if(t<0)$('#txt span').toggle();else{$('#txt span').show();--t}},5e2);//caret
+setInterval(function(){if(t<0)$('#txt span').toggle();else{$('#txt span').show();--t}},5e2);//caret-blinking
 
 
 });

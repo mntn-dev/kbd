@@ -18,7 +18,7 @@ $(function(){
  $.kbd({
   white:false, // keyboard theme (def.: false(=black))
   qwertz:false, // layout (def.: false(=qwerty))
-  toggle_btn:false, //adds button to show/hide keyboard  
+  toggle_btn:false, // adds button to show/hide keyboard  
   hidden:false, // just init, don't show
   input:function(char){[...]}, // input callback
   coffee:false // coffee splash? (white theme)

@@ -7,7 +7,7 @@
 /*
 
 <link href="kbd.css" rel="stylesheet"/>
-...
+[...]
 <script src="jquery.js"></script>
 <script src="kbd.js"></script>
 
@@ -18,6 +18,7 @@ $(function(){
  $.kbd({
   white:false, // keyboard theme (def.: false(=black))
   qwertz:false, // layout (def.: false(=qwerty))
+  toggle_btn:false, //adds button to show/hide keyboard  
   hidden:false, // just init, don't show
   input:function(char){[...]}, // input callback
   coffee:false // coffee splash? (white theme)
@@ -61,7 +62,7 @@ $.BS // Backspace
 
 # Docs/demos
 * <a href="https://mntn-dev.github.io/kbd/" target="_blank">@github.io</a>
-* <a href="https://rawgit.com/mntn-dev/kbd/master/demo.htm" target="_blank">@demo.htm</a> / <a href="https://rawgit.com/mntn-dev/kbd/master/demo-input-elm.htm" target="_blank">@demo-input-elm.htm</a> / <a href="https://rawgit.com/mntn-dev/kbd/master/demo-keyboard-btn.htm" target="_blank">@demo-keyboard-btn.htm</a>
+* <a href="https://rawgit.com/mntn-dev/kbd/master/demo.htm" target="_blank">@demo.htm</a> / <a href="https://rawgit.com/mntn-dev/kbd/master/demo-input-elm.htm" target="_blank">@demo-input-elm.htm</a>
 
 
 # License

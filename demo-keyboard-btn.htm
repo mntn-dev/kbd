@@ -1,0 +1,100 @@
+<!doctype html><html>
+
+<head>
+
+<title>&#9000; $.kbd-demo-keyboard-btn</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+<link href="https://rawgit.com/mntn-dev/kbd/master/kbd.css" rel="stylesheet"/> <!-- $.kbd.css -->
+
+
+
+
+<style type="text/css">
+<!--
+
+*{padding:0;margin:0;outline:0;border:0;font-family:roboto;}
+body{background:floralwhite;overflow:hidden;}
+html{height:100%;width:100%;}
+
+
+#txt{position:absolute;padding:10%;width:80%;height:80%;left:0;top:0;font-size:3vw;line-height:3vw;}
+#txt pre{white-space:pre-wrap;word-wrap:break-word;display:inline;}
+#txt span{color:magenta;}
+
+-->
+</style>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://rawgit.com/mntn-dev/kbd/master/kbd.js"></script>  <!-- $.kbd -->
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+
+var t=0;
+
+
+function input_cb(c){
+if(c==$.BS/*backspace*/){t=1;$('#txt pre').text($('#txt pre').text().slice(0,-1));return;}
+$('#txt pre').append((c==$.OK/*Return/Enter*/)?'\n':c);
+t=1;
+}
+
+
+
+
+$(function(){
+
+$.kbd({
+qwertz:false,
+input:input_cb,
+white:true,
+hidden:true,
+coffee:false
+});
+
+
+
+/*--------------------------------*/
+/*inject keyboard-btn (show/hide):*/
+$('#_kbd_wrap').prepend('<button id="_kbd_btn" style="position:absolute;top:-25%;left:0;width:100%;color:blue!important;z-index:9999991;">&#9000;</button>');
+$('#_kbd_btn').click(function(){if($('#_kbd').offset().top>$(document).height()){$(this).css({position:'absolute',top:'-25%'});$('#_kbd').css({bottom:'-30%'});$.kbd.show();}else $.kbd.hide();});
+(function(){})($.kbd.hide=function(){$('#_kbd').stop().animate({bottom:'-100%'},250);$('#_kbd_btn').css({position:'fixed',top:'92%'});});
+/*-------------------------------*/
+
+
+
+
+$.kbd.show();
+setInterval(function(){if(t<0)$('#txt span').toggle();else{$('#txt span').show();--t}},5e2);//caret-blinking
+
+
+});
+
+
+
+//]]>
+</script>
+
+
+</head>
+
+
+<body>
+
+<div id="txt"><pre></pre><span>|</span></div>
+
+
+</body>
+
+
+</html>
+

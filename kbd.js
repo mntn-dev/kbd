@@ -1,4 +1,4 @@
-/*$.kbd-0.5;(c)2018 - Mntn(r) <https://mn.tn/> c/o Benjamin Lips <g--[AT]--mn.tn>;MIT-Licensed <https://mit-license.org/>;For documentation, see <https://github.com/mntn-dev/kbd/>*/
+/*$.kbd-0.5.1;(c)2018 - Mntn(r) <https://mn.tn/> c/o Benjamin Lips <g--[AT]--mn.tn>;MIT-Licensed <https://mit-license.org/>;For documentation, see <https://github.com/mntn-dev/kbd/>*/
 ;(function($){
 
 $.kbd=function(_){
@@ -10,7 +10,7 @@ if(_.white===!!1)$('#_kbd').addClass('_kbd_white');
 
 if(_.toggle_btn===!!1){
 $('#_kbd_wrap').prepend('<button id="_kbd_btn">&#9000;</button>');
-$('#_kbd_btn').click(function(){if($('#_kbd').offset().top>$(document).height()){$(this).css({position:'absolute',top:'-25%'});$('#_kbd').css({bottom:'-30%'});$.kbd.show();}else $.kbd.hide();});
+$('#_kbd_btn').click(function(){if($('#_kbd').offset().top>$(document).height())$.kbd.show();else $.kbd.hide();});
 }
 
 var _kbd_t=!1,_kbd_t2=!1,q='',tc=function(_){c=_.data().c;cc=_.text();_.text(c);_.data('c',cc);},
@@ -83,8 +83,8 @@ if(_.hidden===!!1)return;$.kbd.show();
 },
 
 
-$.kbd.hide =function(){$('#_kbd').stop().animate({bottom:'-100%'},250);if($('#_kbd_btn')[0]!==undefined)$('#_kbd_btn').css({position:'fixed',top:'93%'});},
-$.kbd.show =function(){if($('#_kbd_btn')[0]!==undefined&&parseInt($('#_kbd').css('bottom'))!==0){$('#_kbd_btn').css({position:'absolute',top:'-25%'});$('#_kbd').css({bottom:'-30%'});}$('#_kbd').stop().animate({bottom:0},250);},
+$.kbd.hide =function(){$('#_kbd').stop().animate({bottom:'-100%'},250);if($('#_kbd_btn')[0]!==undefined)$('#_kbd_btn').css({position:'fixed',top:'auto',bottom:0});},
+$.kbd.show =function(){if($('#_kbd_btn')[0]!==undefined&&parseInt($('#_kbd').css('bottom'))!==0)$('#_kbd_btn').css({position:'absolute',bottom:'auto',top:'-25%'});$('#_kbd').stop().animate({bottom:0},250);},
 $.kbd.white=function(_){if((_===!!1||_===undefined)&&!$('#_kbd').hasClass('_kbd_white')){$('#_kbd').addClass('_kbd_white');if($('#_kbd_coffee')[0]!==undefined)$('#_kbd_coffee').css({display:'block'});}else if(_===!1&&$('#_kbd').hasClass('_kbd_white')){$('#_kbd').removeClass('_kbd_white');if($('#_kbd_coffee')[0]!==undefined)$('#_kbd_coffee').css({display:'none'});}},
 $.kbd.caps =function(_){q=$('#__q').text();if(_===!!1&&q=='q')$('._caps').addClass('_ext-caps').trigger('mouseup');else if(_===!1&&q=='Q')$('._caps').removeClass('_ext-caps').trigger('mouseup');else if(_===undefined)$('._caps').trigger('mouseup');},
 $.kbd.alt  =function(_){q=$('#__q').text();if(_===!!1&&q.toLowerCase()=='q')$('._alt').trigger('click');else if(_===!1&&q=='1')$('._alt').trigger('click');else if(_===undefined)$('._alt').trigger('click');},

@@ -23,7 +23,7 @@ $(function(){
   qwertz:false, // layout (def.: false(=qwerty))
   toggle_btn:false, // adds button to show/hide keyboard  
   hidden:false, // just init, don't show
-  input:function(char){[...]}, // input callback
+  input:function(char){[...]}, // input callback ($.OK/$.BS)
   coffee:false // coffee splash? (white theme)
  });
 

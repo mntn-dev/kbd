@@ -2,13 +2,20 @@
 
 # Usage
 
-```html
+```js
+
+/*
+.
+.
 <link href="kbd.css" rel="stylesheet"/>
+.
+.
 <script src="jquery.js"></script>
 <script src="kbd.js"></script>
-```
+.
+.
+*/
 
-```js
 $(function(){
 
  $.kbd({

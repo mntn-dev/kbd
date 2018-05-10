@@ -1,4 +1,4 @@
-/*$.kbd-0.5;<https://github.com/mntn-dev/kbd/>*/
+/*$.kbd-0.5.1;<https://github.com/mntn-dev/kbd/>*/
 
 #_kbd{position:fixed;bottom:0;width:100%;background:#000;z-index:9997;bottom:-100%;transform-origin:bottom;}
 #_kbd #_kbd_wrap{text-align:center;width:100%;display:block;min-width:500px;}

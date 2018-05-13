@@ -62,9 +62,9 @@ $.BS // Backspace
 /*Callback example (#txt=<pre>)
 -----------------------------*/
 
-function input_cb(c){
- if(c==$.BS/*backspace*/){$('#txt').text($('#txt').text().slice(0,-1));return;}
- $('#txt').append((c==$.OK/*Return/Enter*/)?'\n':c);
+function input_cb(chr){
+ if(chr==$.BS/*Backspace*/)return($('#txt').text($('#txt').text().slice(0,-1)));
+ $('#txt').append((chr==$.OK/*Return/Enter*/)?'\n':chr);
 }
 
 

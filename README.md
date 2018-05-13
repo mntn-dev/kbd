@@ -58,6 +58,16 @@ $.kbd.lock(false) // unlock
 $.OK // Return/Enter
 $.BS // Backspace
 
+
+/*Callback example (#txt=<pre>)
+-----------------------------*/
+
+function input_cb(c){
+ if(c==$.BS/*backspace*/){$('#txt').text($('#txt').text().slice(0,-1));return;}
+ $('#txt').append((c==$.OK/*Return/Enter*/)?'\n':c);
+}
+
+
 ```
 
 <img src="https://mntn-dev.github.io/kbd/kbd-w.png" alt="$.kbd"/>

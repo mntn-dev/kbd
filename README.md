@@ -68,6 +68,13 @@ function input_cb(chr){
 }
 
 
+/*Detect mobile device
+--------------------*/
+
+function is_md(){
+ return(typeof window.orientation!=='undefined')||(navigator.userAgent.indexOf('IEMobile')!==-1);
+}
+
 ```
 
 <img src="https://mntn-dev.github.io/kbd/kbd-w.png" alt="$.kbd"/>

@@ -85,5 +85,5 @@ function is_md(){
 * <a href="https://mntn-dev.github.io/kbd/demo.htm" target="_blank">@demo.htm</a> / <a href="https://mntn-dev.github.io/kbd/demo-input-elm.htm" target="_blank">@demo-input-elm.htm</a>
 
 
-# License
-MIT
+<br/><details><summary>CDN</summary><code>https://cdn.jsdelivr.net/gh/mntn-dev/kbd@0.5.1/kbd.min.js</code></details>
+<details><summary>License</summary><strong>MIT</strong></details>

@@ -1,3 +1,4 @@
+<a href="https://data.jsdelivr.com/v1/package/gh/mntn-dev/kbd/badge?style=rounded"><img src="https://data.jsdelivr.com/v1/package/gh/mntn-dev/kbd/badge?style=rounded" alt=""/></a><br/><br/>
 <img src="https://mntn-dev.github.io/kbd/kbd.gif" alt="$.kbd"/>
 
 # Usage
